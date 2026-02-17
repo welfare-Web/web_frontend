@@ -1,0 +1,393 @@
+
+
+.sec1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.sec1_1{
+    width: 100%;
+    height: 30rem;
+    background:
+    linear-gradient(
+      rgba(0, 2, 47, 0.815),
+      rgba(0, 7, 45, 0.874)
+    ), url("/fixedbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+
+.cont{
+    width: 80%;
+    height: 28rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+.cont1{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.cont1_1{
+    display: flex;
+    height: 6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+.logo1{
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    margin-left: -.4rem;
+    width: 4.8rem;
+    height: 4.8rem;
+}
+.nametxt{
+    font-size: 1rem;
+    font-weight: 700;
+    width: 100%;
+    color: white;
+    letter-spacing: .05rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    
+}
+.paratxt{
+    width: 100%;
+    font-size: .8rem;
+    font-weight: 400;
+    color: rgb(224, 224, 224);
+    letter-spacing: 0.02rem;
+    margin-top: 2rem;
+    word-wrap:break-word;
+}
+.cont1_2{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+.round1{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.logo2{
+    width:.9rem;
+    height: .9rem;
+}
+.cont2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 1rem;
+    height: 60%;
+    margin-top: 2rem;
+}
+.cont2_1{
+    display: flex;
+    flex-direction: column;
+}
+.navtext{
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 1rem;
+}
+.cont3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    padding: 1rem;
+    height: 60%;
+    margin-top: 2rem;
+}
+.nametxt1{
+    font-size: 1rem;
+    color: rgb(0, 195, 255);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+.cont4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 1rem;
+    height: 80%;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+.cont4_1{
+    height: 60%;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.cont4_2{
+    height: 40%;
+    width: 100%;
+}
+.nametxt2{
+    font-size: .8rem;
+    font-weight: 400;
+    color: aliceblue;
+    margin-bottom: .8rem;
+}
+.nametxtc{
+    font-size: .8rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 1rem
+}
+
+@media (max-width: 1024px) and (max-width:1280) {
+
+  .sec1_1 {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .cont {
+    width: 90%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .cont1,
+  .cont2,
+  .cont3,
+  .cont4 {
+    width: 45%;
+    margin-top: 0;
+    height: auto;
+  }
+
+  .cont4_1 {
+    height: 14rem;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec1{
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .sec1_1 {
+    height: auto;
+    padding: 2.5rem 0 1rem;
+    align-items: flex-start;   /* 👈 LEFT */
+  }
+
+  .cont {
+    flex-direction: column;
+    margin-left: 1rem;
+    width: 95%;
+    height: auto;
+    gap: 2rem;
+    align-items: flex-start;   /* 👈 LEFT */
+  }
+
+  /* ---------- BRAND SECTION ---------- */
+  .cont1 {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0;
+  }
+
+  .cont1_1 {
+    justify-content: flex-start; /* 👈 LEFT */
+  }
+
+  .paratxt {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .cont1_2 {
+    margin-top: 1.5rem;
+    justify-content: flex-start; /* 👈 social icons LEFT */
+  }
+
+  /* ---------- NAV + QUICK LINKS ---------- */
+  .cont2,
+  .cont3 {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    height: auto;
+  }
+
+  .navtext {
+    font-size: 0.95rem;
+  }
+
+  /* ---------- MAP + ADDRESS ---------- */
+  .cont4 {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .cont4_1 {
+    height: 16rem;
+    width: 21rem;
+  }
+
+  .cont4_2 {
+    text-align: left;
+  }
+
+  .nametxt2 {
+    font-size: 0.85rem;
+  }
+
+  /* ---------- COPYRIGHT ---------- */
+  .sec1_2 {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: left;   /* 👈 LEFT */
+  }
+
+  .nametxtc {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .sec1_1 {
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .cont {
+    width: 90%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+
+  /* COMPANY INFO */
+  .cont1 {
+    width: 45%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .paratxt {
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+  }
+
+  .cont1_2 {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: left;
+  }
+
+  /* NAVIGATION */
+  .cont2 {
+    width: 25%;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .navtext {
+    font-size: 0.95rem;
+  }
+
+  /* QUICK LINKS */
+  .cont3 {
+    width: 25%;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .nametxt1 {
+    font-size: 0.95rem;
+  }
+
+  /* CONTACT SECTION */
+  .cont4 {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+  }
+
+  .cont4_1,
+  .cont4_2 {
+    height: auto;
+  }
+
+  .nametxt2,
+  .nametxtc {
+    font-size: 0.85rem;
+  }
+
+  /* LOGO SIZES */
+  .logo1 {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .logo {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .round1 {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .logo2 {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}

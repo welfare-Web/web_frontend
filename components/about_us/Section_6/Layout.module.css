@@ -1,0 +1,382 @@
+.section {
+  background: radial-gradient(circle at top, #042a2e, #031417);
+  padding: 100px 40px;
+  color: #fff;
+
+  height: 750px; /* 🔴 FIX OVERALL HEIGHT */
+  overflow: hidden; /* 🔴 PREVENT EXPANSION */
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 90px;
+}
+
+/* LEFT */
+
+.tag {
+  color: #2f6bff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 18px 0 40px;
+}
+
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 1rem;
+}
+
+.imageWrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: -6rem 0 0 0;
+}
+
+.expNum {
+  font-size: 70px;
+  font-weight: 900;
+  color: #2f6bff;
+  margin-top: -4rem;
+}
+
+.expText {
+  margin-top: -4.7rem;
+  margin-left: 6rem;
+  font-size: 18px;
+}
+.linetxt {
+  margin: -8rem 0 0 16rem;
+}
+.line {
+  width: 40%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: -40px 0 24px;
+}
+
+.subTitle {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 16px;
+  color: #b5c3c7;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+/* RIGHT */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faqItem {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* TITLE ROW */
+.faqHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 26px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* 🔵 HOVER ONLY TITLE */
+.faqHead:hover {
+  background: #4673f4;
+}
+
+/* 🔵 ACTIVE TITLE */
+.activeHead {
+  background: #4673f4;
+}
+
+/* TEXT COLOR ON ACTIVE */
+.activeHead span {
+  color: #fff;
+}
+
+/* ICON */
+.icon {
+  font-size: 22px;
+  color: #2f6bff;
+}
+
+.activeHead .icon {
+  color: #fff;
+}
+
+/* BODY (NO HOVER EFFECT) */
+.faqBody {
+  padding: 18px 26px 24px;
+  font-size: 15px;
+  color: #e6ecff;
+  line-height: 1.6;
+}
+
+
+@media (max-width: 600px) {
+
+  /* ===== SECTION ===== */
+  .section {
+    padding: 4rem 1.2rem;
+    height: auto;          /* 🔥 REMOVE FIXED HEIGHT */
+    overflow: visible;     /* 🔥 ALLOW CONTENT TO FLOW */
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* ===== LEFT ===== */
+  .tag {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin: 14px 0 24px;
+    line-height: 1.25;
+  }
+
+  .profileRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .imageWrap {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* EXPERIENCE BOX */
+  .expBox {
+    margin: 0;
+  }
+  .expyear{
+    margin: -8rem 0 0 12rem;
+  }
+.expNum{
+    font-size: 42px;
+}
+  /* .expyear .expNum .expText{
+    font-size: 42px;
+    margin: 0 0 0 0;
+  } */
+
+  .expText {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .linetxt {
+    margin: 1.5rem 0 0;
+  }
+
+  .line {
+    width: 100%;
+    margin: 12px 0 18px;
+  }
+
+  .subTitle {
+    font-size: 18px;
+  }
+
+  .desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ===== RIGHT ===== */
+  .right {
+    gap: 18px;
+  }
+
+  .faqItem {
+    border-radius: 6px;
+  }
+
+  .faqHead {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .faqBody {
+    padding: 14px 18px 18px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+
+
+
+
+/* ===================== TABLET VIEW ===================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  /* ===== SECTION ===== */
+  .section {
+    padding: 5rem 2rem;
+    height: auto;          /* remove fixed height */
+    overflow: visible;
+  }
+
+  .container {
+    grid-template-columns: 1fr;   /* stack like iPad */
+    gap: 4rem;
+  }
+
+  /* ===== LEFT ===== */
+  /* CENTER LEFT SIDE ON TABLET */
+.profileRow{
+  justify-content: center;
+  text-align: center;
+}
+
+.tag,
+.title,
+.subTitle,
+.desc{
+  text-align: center;
+}
+
+.expBox,
+.expNum,
+.expText,
+.linetxt{
+  margin: 0;
+}
+.line{
+  margin: 16px auto 20px;
+}
+.imageWrap{
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .tag {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  }
+
+  .title {
+    font-size: 36px;
+    margin: 16px 0 28px;
+  }
+
+  .profileRow {
+    gap: 28px;
+  }
+
+  .imageWrap {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* EXPERIENCE AREA FIX */
+  .expBox {
+
+    position: absolute;
+    margin: -2rem 0 0 20rem;
+    
+  }
+
+  .expNum {
+    font-size: 56px;
+    margin: 0;
+  }
+
+  .expText {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .linetxt {
+    margin: 2rem 0 0;
+  }
+
+  .line {
+    width: 100%;
+    margin: 16px 0 20px;
+  }
+
+  .subTitle {
+    font-size: 20px;
+  }
+
+  .desc {
+    font-size: 15px;
+  }
+  
+  /* ===== RIGHT (FAQ) ===== */
+  .right {
+    gap: 20px;
+  }
+
+  .faqHead {
+    padding: 18px 22px;
+    font-size: 16px;
+  }
+
+  .faqBody {
+    padding: 16px 22px 20px;
+    font-size: 14.5px;
+  }
+}

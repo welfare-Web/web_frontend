@@ -1,0 +1,2298 @@
+.hero{
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.videoWrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden; /* ✅ KEY FIX */
+  z-index: 0;
+}
+.bgVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(10px);
+  transform: scale(1.08);
+  -webkit-mask-image: linear-gradient( to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100% );
+  mask-image: linear-gradient( to bottom, rgba(0,0,0,1)10%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100% );
+}
+
+.container{
+   position: relative;          /* ✅ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;      
+  padding-top: 80px;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+  
+}
+.aniamtion {
+  width: 100%;
+  margin-top: 40px;
+}
+.border{
+  border-radius: 2rem;
+  width: 13rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(70, 140, 255, 0.4);
+}
+.title {
+  font-size: 1.4rem;
+  text-align: center;
+  
+ 
+}
+
+.title h1 {
+  line-height: 1.15;
+}
+.line {
+  display: block;
+}
+
+/* Letter animation */
+.line span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: letterUp 0.45s ease forwards;
+}
+
+@keyframes letterUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    
+  }
+}
+
+.para p{
+  max-width: 720px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 1.8s;
+  color: grey;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.getstarted{
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #1f66ff;
+  border-radius: 20rem;
+}
+
+
+.centerStage {
+   position: relative;
+  width: 100%;
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;    /* pipeline + spider need this */
+}
+.animationStage {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.centerLogo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+ 
+  z-index: 10;          /* ABOVE animations */
+  pointer-events: none; /* clicks pass through */
+}
+
+.loading{
+    animation: spin 6s linear infinite;
+
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animationSwitcher {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ===== RIPPLE RADAR WRAPPER ===== */
+.radarWrapper {     
+  position: relative;
+  width: 450px; /* Original Desktop Size */
+  height: 450px;
+  margin: 0 auto; /* Center it */
+  transform-origin: center center;
+  animation: radaropen 0.9s ease-out forwards, radarclose 0.9s ease-in forwards 6.4s;
+  overflow: hidden;
+}
+@keyframes radaropen {
+  from {
+    transform: scale(2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes radarclose {
+  to {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+/* ===== RIPPLE WAVES ===== */
+.radarRipple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #0296f8;
+  animation: radarRipple 3s ease-out infinite;
+
+}
+
+/* .radar-ripple.delay-1 {
+  animation-delay: 1s;
+} */
+
+
+
+@keyframes radarRipple {
+  0% {
+    border: 1px solid #0296f8;
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    border: 200px solid #0296f8;
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.pipeline {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 360px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0 40px;
+  box-sizing: border-box;
+  animation: pipelineOpenX 0.9s ease-out forwards,
+    pipelineCloseX 0.9s ease-in forwards 14.6s;
+}
+@keyframes pipelineOpenX {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@keyframes pipelineOpenX {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pipelineCloseX {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+
+/* SIDE LINES */
+.pipeline::before,
+.pipeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #c1dafc, transparent);
+}
+
+.pipeline::before { left: 0; }
+.pipeline::after { right: 0; }
+
+/* ========================= */
+/* CENTER BAR (STATIC) */
+/* ========================= */
+
+.centerBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: center;
+  width: 8rem;
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, #0296f8, #93c5fd);
+  z-index: 2;
+
+  animation: openFromCenter 0.9s ease-out forwards,
+    closetoCenter 0.9s ease-in forwards 14.3s;
+}
+
+@keyframes openFromCenter {
+  from {
+    transform: translateX(-50%) scaleY(0);
+    border-radius: 55%;
+  }
+  to {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+@keyframes closetoCenter {
+  from {
+    transform: translateX(-50%) scaleY(1);
+  }
+  to {
+      border-radius: 55%;
+      transform: translateX(-50%) scaleY(0);
+    
+  }
+}
+
+
+/* ========================= */
+/* ROW */
+/* ========================= */
+
+
+ .pipelineRow {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+   width: 100%;
+}
+
+/* the actual line */
+.pipelineRow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #c1dafc;
+  transform: translateY(-50%);
+}
+
+
+/* .pipeline-row:last-child {
+  border-bottom: 1px solid #e5edff;
+} */
+
+
+/* ========================= */
+/* MOVING ITEM */
+/* ========================= */
+
+.pipelineItem {
+  position: absolute;
+  left: -40%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  /* padding: 8px 14px;*/
+
+
+  /* font-size: 14px; */
+  /* color: #6b7280; */
+
+  animation: moveItem 15s linear infinite;
+  
+}
+
+
+/* ========================= */
+/* ICON */
+/* ========================= */
+
+.pipelineIcon {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* ❌ before center */
+.pipelineIcon::before {
+  content: "✕"; /* Changed from ! to ✕ */
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  opacity: 1;
+  animation: wrongToRight 15s linear infinite;
+}
+/* 2. Style the Text Container */
+.textContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.beforeText, .afterText {
+  white-space: nowrap;
+  line-height: 1;
+  will-change: opacity;
+}
+
+/* 3. Text Animation Logic */
+.beforeText {
+  opacity: 1;
+  animation: wrongToRight 15s linear infinite;
+}
+
+.afterText {
+  position: absolute; /* Stacked on top of beforeText */
+  left: 0;
+  opacity: 0;
+  animation: rightFromWrong 15s linear infinite;
+}
+
+/* 2. Style the Text Container */
+.textContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.beforeText, .afterText {
+  white-space: nowrap;
+  line-height: 1;
+  will-change: opacity;
+}
+
+/* 3. Text Animation Logic */
+.beforeText {
+  opacity: 1;
+  animation: wrongToRight 15s linear infinite;
+}
+
+.afterText {
+  position: absolute; /* Stacked on top of beforeText */
+  left: 0;
+  opacity: 0;
+  animation: rightFromWrong 15s linear infinite;
+}
+
+/* ✅ after center */
+.pipelineIcon::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #22c55e;
+  color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: rightFromWrong 15s linear infinite;
+}
+
+/* ========================= */
+/* KEYFRAMES */
+/* ========================= */
+@keyframes moveItem {
+  0% {
+    left: -20%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes wrongToRight {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes rightFromWrong {
+  0%, 49% { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+/* ========================= */
+/* 🚨 THE MOST IMPORTANT PART */
+/* SAME DELAY FOR EACH ROW */
+/* ========================= */
+
+/* Independent delays per row (CORRECT) */
+.pipelineRow:nth-of-type(1) .pipelineItem,
+.pipelineRow:nth-of-type(1) .pipelineIcon::before,
+.pipelineRow:nth-of-type(1) .pipelineIcon::after,
+.pipelineRow:nth-of-type(1) .beforeText,
+.pipelineRow:nth-of-type(1) .afterText {
+  animation-delay: 0s;
+}
+
+.pipelineRow:nth-of-type(2) .pipelineItem,
+.pipelineRow:nth-of-type(2) .pipelineIcon::before,
+.pipelineRow:nth-of-type(2) .pipelineIcon::after,
+.pipelineRow:nth-of-type(2) .beforeText,
+.pipelineRow:nth-of-type(2) .afterText {
+  animation-delay: 1s;
+}
+
+.pipelineRow:nth-of-type(3) .pipelineItem,
+.pipelineRow:nth-of-type(3) .pipelineIcon::before,
+.pipelineRow:nth-of-type(3) .pipelineIcon::after,
+.pipelineRow:nth-of-type(3) .beforeText,
+.pipelineRow:nth-of-type(3) .afterText {
+  animation-delay: 2s;
+}
+
+.pipelineRow:nth-of-type(4) .pipelineItem,
+.pipelineRow:nth-of-type(4) .pipelineIcon::before,
+.pipelineRow:nth-of-type(4) .pipelineIcon::after,
+.pipelineRow:nth-of-type(4) .beforeText,
+.pipelineRow:nth-of-type(4) .afterText {
+  animation-delay: 3s;
+}
+
+/* PERFORMANCE */
+.pipelineItem {
+  will-change: left, opacity;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.pipelineItem span {
+  white-space: nowrap;     /* ⛔ never break into next line */
+  line-height: 1;   
+         /* consistent vertical alignment */
+}
+
+
+
+
+
+/* ===== CENTER CORE ===== */
+.radarCenter {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(70, 140, 255, 0.2);
+  display: grid;
+  place-items: center;
+}
+
+.radarCenterInner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 40px rgba(70, 140, 255, 0.4);
+}
+
+/* ===== AVATARS ===== */
+.radarAvatar {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  animation: avatarFloat 4s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radarAvatar img {
+  place-items: center;
+  object-fit: cover;
+}
+
+/* Slight timing variation */
+.radarAvatar:nth-child(odd) {
+  animation-duration: 5.5s;
+}
+
+@keyframes avatarFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.spinWrapper {
+  position: relative;        /* REQUIRED */
+  width: 220px;
+  height: 260px;             /* space for label */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinSvg {
+  width: 150px;
+  height: 150px;
+}
+
+/* 🔥 ONLY 4 STROKES */
+.spinRing {
+  fill: none;
+  stroke: #0296f8;
+  stroke-width: 17;
+  stroke-linecap: round;
+
+  /* 👇 THIS CREATES EXACTLY 4 STROKES */
+    stroke-dasharray: 120 50;
+
+  transform-origin: 150px 150px;
+   animation: aiSequence 4s ease-in-out forwards infinite;
+}
+
+
+
+/* LABEL */
+.spinLabel {
+ 
+   position: absolute;
+  bottom: 0;                 /* pin to bottom */
+  left: 50%;
+  transform: translateX(-50%);
+box-sizing: border-box;
+  padding: 8px 18px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.statusDot {    
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+/* ROTATION */
+@keyframes aiSequence {
+
+  /* Phase 1: lines come OUT */
+  0% {
+    stroke-dashoffset: 240;
+    transform: rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+
+  25% { /* 1s */
+    stroke-dashoffset: 0;
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  /* Phase 2: spin */
+  75% { /* 3s */
+    stroke-dashoffset: -360;
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+
+  /* Phase 3 + 4: move IN + fade */
+  100% { /* 4s */
+    stroke-dashoffset: -360;
+    transform: rotate(420deg) scale(0.7);
+    opacity: 1;
+  }
+}
+
+
+/* WRAPPER */
+.intelWrapper {
+
+  width: 100%;
+  height: 450px;
+  /* margin: auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: spideropen 0.9s ease-in forwards,
+    spiderclose 1s ease-out forwards 9.28s;
+
+}
+@keyframes spideropen {
+  from {
+    transform: scalex(1.3);
+    opacity: 0;
+  }
+  to {
+    transform: scalex(1);
+    opacity: 1;
+  }
+}
+@keyframes spiderclose {
+  to {
+    transform: scalex(1.3);
+    opacity: 1;
+  }
+}
+
+/* SVG */
+.intelSvg {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  aspect-ratio: 1200 / 700; /* already correct */
+}
+.intelSvg circle {
+  vector-effect: non-scaling-stroke;
+}
+
+/* HUB */
+.hubBg {
+  fill: #4c8dff;
+  opacity: 0.18;
+}
+
+.hubCore {
+  fill: #ffffff;
+  animation: hubPulse 2.5s ease-in-out infinite;
+}
+
+/* STATIC CONNECTORS */
+.static path {
+  stroke: #e3ebf8;
+  stroke-width: 6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* BLUE FLOW */
+.flow path {
+  stroke: #1f66ff;
+  stroke-width: 6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 40 260;
+  animation: flowMove 3s linear infinite;
+}
+
+/* STAGGER */
+.flow path:nth-child(1) { animation-delay: 0s; }
+.flow path:nth-child(2) { animation-delay: 0s; }
+.flow path:nth-child(3) { animation-delay: 0s; }
+.flow path:nth-child(4) { animation-delay: 0s; }
+.flow path:nth-child(5) { animation-delay: 0s; }
+.flow path:nth-child(6) { animation-delay: 0s; }
+
+/* ANIMATIONS */
+@keyframes flowMove {
+  to {
+    stroke-dashoffset: -300;
+  }
+}
+
+@keyframes hubPulse {
+  0%, 100% {
+    r: 38;
+    opacity: 1;
+  }
+  50% {
+    r: 44;
+    opacity: 0.6;
+  }
+}
+
+.hub-bg {
+  fill: #4c8dff;
+  opacity: 0.18;
+}
+
+.static path {
+  stroke: #e3ebf8;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.flow path {
+  stroke: #1f66ff;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 40 260;
+  animation: flowMove 1.5s linear infinite;
+}
+
+@keyframes flowMove {
+  to {
+    stroke-dashoffset: -300;
+  }
+}
+
+.avatars circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+.sec2 {
+  width: 100%;
+  min-height: 100vh; /* Changed from 130vh to allow content to breathe */
+  padding: 4rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.sec2_2 {
+  width: 70%; /* Increased from 70% for better use of space at 125% scale */
+  max-width: 1440px; /* Prevents it from getting too wide on ultra-wide screens */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.content {
+  display: flex;
+  align-items:  center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.innercontent {
+  width: 60%;
+}
+
+.innercontent h2 {
+  font-size: 2.5rem; /* Using rem for better scaling */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.innercontent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Responsive Grid for Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+  gap: 2rem;
+  width: 100%;
+}
+
+.cardcontent {
+  width: 100%; /* Grid handles the width now */
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Ensures images don't bleed out */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.cardcontent:hover {
+  transform: translateY(-5px);
+}
+
+.top {
+  height: 280px; /* Fixed height for consistency */
+  position: relative;
+  width: 100%;
+  object-fit: contain; /* Fixed from "contain cover" */
+}
+
+.topimg {
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 1.5s ease-in-out;
+}
+
+.active {
+  clip-path: circle(150% at 50% 50%);
+  opacity: 1;
+  z-index: 2;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.bottom {
+  padding: 1.5rem;
+}
+
+.bottom h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.bottom p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Target the 125% Scaling (1536px width) */
+@media (max-width: 1536px) {
+  .sec2_2 {
+    width: 70%;
+  }
+  
+  .innercontent h2 {
+    font-size: 2.2rem;
+  }
+  
+  .top {
+    height: 180px; /* Slightly shorter images for smaller vertical space */
+  }
+}
+
+/* Animations remain same */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.sec_3 {
+  width: 100%;
+  position: relative;
+  margin-top: 5rem;
+  /* Use min-height instead of fixed height to prevent overflow at 125% scaling */
+  min-height: auto; 
+  
+  display: flex;
+  align-items: center;
+}
+
+.container1 {
+  /* Increased from 70% to 85% for better spacing on 1536px logical width */
+  width: 70%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Updated Grid to handle 6 items (1 main text + 5 feature cards) */
+.cards2 {
+  display: grid;
+  /* Creates a clean 3-column layout */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.card1 {
+  /* This card spans the header area if needed, but here it occupies one grid slot */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card1 h2 {
+  font-size: 2.5rem; /* rem scales better than px */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.card1 p {
+  color: #475569;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.card2 {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.card2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.15);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f7ff;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  font-size: 22px;
+}
+
+.card2 h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+}
+
+.card2 p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* CTA Button Refinement */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #00277c;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.15);
+  font-weight: 500;
+  transition: .2s;
+  cursor: pointer;
+   opacity: 0;
+   transform: translateY(30px);
+  animation: buttonUp 0.6s ease forwards;
+  animation-delay: 2.2s; /* after text */
+}
+
+.cta1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #00277c;
+  height: 2.5rem;
+  width: 8.6rem;
+  padding: 1rem;
+  color: #fff;
+  border: none;
+  
+  box-sizing: border-box;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+    opacity: 0;
+   transform: translateY(30px);
+ animation: buttonUp 0.6s ease forwards;
+  animation-delay: 2.2s; /* after text */
+}
+
+
+@keyframes buttonUp {
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+}
+
+.cta1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cta:hover{
+ scale: 1.05;
+ background-color: #032266;
+}
+
+/* Specific adjustments for 1920x1080 (125% Scale / 1536px width) */
+@media (max-width: 1536px) {
+  .container1 {
+    width: 70%;
+  }
+  .cards2 {
+    gap: 20px;
+  }
+  .card1 h2 {
+    font-size: 2.1rem;
+  }
+  .border{
+    margin-top: 2rem;
+  }
+  .section{
+    margin-bottom: 13rem;
+  }
+  
+}
+
+/* Responsive for smaller tablets/screens */
+@media (max-width: 1100px) {
+  .cards2 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller laptops */
+  }
+}
+
+
+
+@keyframes buttonUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sec_4{
+   width: 100%;
+  height:100vh;
+  position: relative;
+  /* background-color: #475569; */
+}
+.sec4_4{
+ width: 70%;
+  height: 95%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* background-color: #0296f8; */
+  transform: translate(-50%,-50%);
+}
+.heading h2{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+ 
+}
+
+.containers{
+  width: 100%;
+  height: 10rem;
+  position: sticky;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  /* background-color: #93c5fd; */
+}
+.leftcontent{
+  
+  width: 45%;
+  height: auto;
+  /* background-color: #475569; */
+}
+.leftcontent h3{
+  margin-left: 1rem;
+}
+.leftcontent p{
+  width: 90%;
+  margin-left: 1rem;
+}
+.titleleft{
+  background-color: white;
+  border-radius: 2rem;
+  border: 1px solid #e3ebf8;
+
+}
+.rightcontent{
+  width: 45%;
+ 
+  height: auto;
+  /* background-color: #4c8dff; */
+
+}
+.rightcontent h3{
+  margin-left: 1rem;
+}
+.rightcontent p{
+  width: 90%;
+  margin-left: 1rem;
+
+}
+.titleright{
+  background-color: white;
+  border-radius: 2rem;
+  border: 1px solid #e3ebf8;
+}
+
+.listleft{
+  margin: 5em 0 5em 0;
+}
+
+.sec_5 {
+  width: 100%;
+  min-height: 100vh; /* Changed from fixed 45rem to 100vh for 1080p screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.client {
+  width: 70%; /* Increased from 70% to handle the 125% scaling width better */
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.headtitle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+  align-items: center;
+}
+
+.clienttitle {
+  max-width: 50%;
+}
+
+.clienttitle h2 {
+  font-size: 2.5rem; /* rem is more stable than px at high scale */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.clienttitle p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.clientcard {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Add a subtle fade on sides so cards don't hit the edge abruptly */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.track {
+  display: flex;
+  
+  /* If you want CSS-only animation, uncomment below: */
+  /* animation: scroll 40s linear infinite; */
+}
+
+.clicard {
+  /* At 1536px logical width, 3 cards is perfect. 4 becomes too thin. */
+  flex: 0 0 33.333%; 
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  border-radius: 2rem;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Slightly taller for 1080p clarity */
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.clientimg {
+  object-fit: cover;
+}
+
+.review {
+  width: 100%;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 15px;
+  min-height: 200px; /* Ensures all cards stay level */
+}
+
+.clientpara {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+
+.stickycontainer {
+ max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 0 16px;
+}
+
+
+.heading {
+   text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 4rem 0;
+  
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  width: 100%;
+}
+
+.stickyTitle {
+  position: sticky;
+  top: 2rem;
+  z-index: 50;
+
+  height: 3rem;
+  width: 100%;
+  border-radius: 12px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 900;
+
+  background: #ffffff;
+  
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+  overflow: hidden;
+}
+
+.stickyTitle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: calc(var(--fill, 0) * 100%);
+  transition: width 180ms linear;
+  z-index: 0;
+}
+
+.titleText {
+  position: relative;
+  z-index: 5;
+  transition: color 180ms linear;
+}
+
+.stackWrap {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 400px;
+}
+
+
+.stackInactive {
+  position: relative;
+  transform: translateY(100px);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.stackActive {
+  position: sticky;
+  transform: translateY(0px);
+  z-index: 10;
+  overflow: visible;
+}
+
+.tick {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 900;
+
+  background: black;
+  color: white;
+}
+
+.tick1{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 900;
+
+  background: #0a49ff;
+  color: white;
+}
+
+
+.sticky {
+ position: sticky;
+  top: 50px;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.stickyTitle {
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.titleText {
+  position: relative;
+  z-index: 1;
+}
+
+.stickyTitle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: calc(var(--fill, 0) * 100%);
+  transition: width 180ms linear;
+  z-index: 0;
+}
+
+.leftTitle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: calc(var(--fill, 0) * 100%); /* leftProgress value inga varum */
+  background: black; 
+  transition: width 150ms linear;
+  z-index: 0;
+}
+
+.leftTitle .titleText {
+  color: color-mix(in srgb, #ffffff calc(var(--fill, 0) * 100%), #0b1020);
+}
+
+.rightTitle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: calc(var(--fill, 0) * 100%); /* rightProgress value inga varum */
+  background: #0a49ff; 
+  transition: width 150ms linear;
+  z-index: 0;
+}
+
+.rightTitle .titleText {
+  color: color-mix(in srgb, #ffffff calc(var(--fill, 0) * 100%), #0b1020);
+}
+
+
+/* ================= SECTION SCROLL AREA ================= */
+.section {
+  width: 100%;
+  position:relative;
+  
+}
+
+/* ================= TWO COLUMN LAYOUT ================= */
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  height: 45rem;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= COLUMN ================= */
+.col {
+  width: 100%;
+  position: relative;
+}
+
+/* ================= STACK CARDS ================= */
+.stackCard {
+  width: 100%;
+  height: 3rem;
+  padding: 13px 10px;
+  margin-bottom: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 10px;
+  transform-origin: center top;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+
+/* ================= TICK ICON ================= */
+.tick {
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+
+/* CARD BASE */
+.stackCard {
+  margin-top: 16px;
+  height: 5rem;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: white;
+  box-sizing: border-box;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: margin-top 0.5s ease, transform 0.4s ease, opacity 0.4s ease;
+  box-shadow:
+    0 4px 10px rgba(10, 73, 255, 0.1),
+    0 12px 30px rgba(10, 73, 255, 0.1),
+    0 0 0 1px rgba(10, 73, 255, 0.1);
+}
+
+
+/* PROGRESSIVE STACKING */
+.stackActive + .stackActive {
+  margin-top: -40px;
+}
+
+/* TICK */
+.tick {
+  width: 32px;
+  height: 32px;
+  background: rgb(0, 0, 0);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: lighter;
+}
+
+
+.leftTitle::before,
+.rightTitle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: calc(var(--fill, 0) * 100%);
+  transition: width 180ms linear;
+  z-index: 0;
+}
+
+.leftTitle::before { background: rgb(101, 172, 230); }
+.rightTitle::before { background: #0026ff; }
+
+
+
+
+
+
+
+/* Specific Adjustments for Laptop 1920x1080 (125% Scale) */
+@media (max-width: 1536px) {
+  .client {
+    width: 70%;
+  }
+
+  .clienttitle h2 {
+    font-size: 2.2rem;
+  }
+  
+  .img {
+    height: 250px; /* Reduced height to keep content "above the fold" */
+  }
+
+  .clientpara {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Tablet view (2 cards) */
+@media (max-width: 1100px) {
+  .clicard {
+    flex: 0 0 50%;
+  }
+}
+
+/* If using CSS animation instead of trackRef */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.banner {
+  /* Using 85% width for scaled laptops to prevent the content from looking squeezed */
+  width: 70%;
+  max-width: 1400px;
+  height: 6rem; /* Slightly taller for better visual balance */
+  margin: 0 auto; /* Cleaner centering than absolute positioning */
+  display: flex;
+  align-items: center;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    #f4faff 0%,
+    #7dd3fc 30%,
+    #2563eb 65%,
+    #1e40af 100%
+  );
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+  
+}
+
+/* LEFT – STATIC */
+.left {
+  width: 30%;
+  padding:3rem;
+  font-size: 1.1rem; /* rem scales better with system settings */
+  line-height: 1.3;
+  font-weight: 600;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.divider {
+  width: 1.5px;
+  height: 45px;
+  margin: 0 40px;
+  background: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+/* RIGHT – MOVING */
+.right {
+  flex-grow: 1;
+  overflow: hidden;
+  /* Mask creates a fade effect on edges for a premium look */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Logo track animation */
+.logoTrack {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Increased gap for 1920px width */
+  width: max-content;
+  animation: moveLogos 25s linear infinite; /* Faster for a smoother feel */
+}
+
+.logoTrack img {
+  height: 32px; /* Slightly larger for 1080p clarity */
+  width: auto;   /* Maintains aspect ratio */
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* Key Improvements for 125% Scaling (1536px view) */
+@media (max-width: 1536px) {
+  .banner {
+    width: 70%;
+    
+  }
+  
+  .left {
+    font-size: 0.95rem;
+    width: 28%;
+  }
+
+  .divider {
+    margin: 0 25px;
+  }
+}
+
+/* Seamless Animation Fix */
+@keyframes moveLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Since you duplicated the set, moving 50% makes it perfectly seamless */
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+
+  .hero {
+    width: auto;
+    min-height: 100svh; /* Using svh to prevent mobile browser UI overlap */
+    padding: 0 20px;
+    overflow-x: hidden; /* Strict prevention of horizontal scroll */
+ 
+  }
+
+  .container {
+    padding-top: 60px; /* Reduced top padding for smaller screens */
+  }
+
+  .border {
+    width: auto;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .title h1 {
+    font-size: 1.8rem; /* Scaled down headline */
+    letter-spacing: -0.5px;
+  }
+
+  .para {
+    max-width: 100%;
+    font-size: 0.95rem; /* Better readability on mobile */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  /* Center Stage Adjustments */
+  .centerStage {
+    min-height: 350px; /* Shorter for mobile aspect ratios */
+    width: 100%;
+    transform: scale(0.9); /* Global scale down to ensure nothing hits edges */
+  }
+
+  .centerLogo {
+    /* Scale the center logo image slightly smaller */
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  .aniamtion {
+    margin-top: 20px;
+    width: 100vw; /* Allow full width bleed for background lines */
+    margin-left: -20px; /* Offset parent padding */
+  }
+
+  
+  /* Scale down the Radar/Ripple */
+.radarWrapper {
+    width: 300px;  /* Scaled down for tablets/mobile */
+    height: 300px;
+  }
+
+  /* Scale down the avatars for the smaller radar */
+  .radarAvatar img {
+    width: 25px !important; 
+    height: 25px !important;
+  }
+
+  /* Adjust the ripple border growth for the smaller scale */
+  @keyframes radarRipple {
+    0% {
+      border: 1px solid #0296f8;
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      border: 120px solid #0296f8; /* Reduced from 200px to fit 300px container */
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  .pipelineRow {
+    overflow: hidden;
+    width: 100vw; /* Force width to viewport on mobile */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  .pipeline {
+    max-width: 100%;
+    height: auto;              /* 🔥 remove fixed height */
+    padding: 0 16px;           /* 🔥 reduce side padding */
+    overflow: hidden;          /* 🔥 contain animation */
+  }
+
+  /* Reduce the size of the pill so it doesn't take up too much screen width */
+  .pipelineItem {
+    padding: 4px 8px;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .beforeText, .afterText {
+    font-size: 11px; /* Smaller text for mobile fit */
+  }
+  .centerBar{
+    width: 5.5rem;
+  }
+  
+
+ .intelWrapper {
+  height: 400px; /* Adjust height based on your design */
+  width: 100%;   /* Use 100% of the mobile screen width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* This clips the legs that go off-screen */
+  position: relative;
+}
+
+.intelSvg {
+  /* Increase width to 160%-200% to 'zoom in' on the spider */
+  width: 180%; 
+  height: auto;
+  flex-shrink: 0; /* Prevents the SVG from squishing */
+}
+
+.mobileScale {
+  transform:  scale(1)  !important;
+  transform-origin: center;
+}
+
+  /* Adjust lines to stay clean when zoomed */
+  .static path, .flow path {
+    stroke-width: 3; 
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* Optional: Adjust avatar size if they feel too big after the scale */
+  .avatars image {
+    width: 40px;
+    height: 40px;
+    x: -20px;
+    y: -20px;
+  }
+
+
+  .sec2 {
+    padding: 3rem 0;
+    height: auto; /* Allow section to grow with stacked cards */
+  }
+
+  .sec2_2 {
+    width: 90%; /* Take up more width on small screens */
+    gap: 2rem;
+  }
+
+  .content {
+    flex-direction: column; /* Stack Title and Button */
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .innercontent {
+    width: 100%; /* Full width for text */
+  }
+
+  .innercontent h2 {
+    font-size: 1.8rem; /* Smaller heading for mobile */
+  }
+
+  .innercontent p {
+    font-size: 1rem;
+  }
+
+  /* Switch Grid to Single Column */
+  .cards {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .cardcontent {
+    border-radius: 1.25rem; /* Slightly smaller radius for mobile */
+  }
+
+  .top {
+    height: 200px; /* Reduced height for mobile screens */
+  }
+
+  .bottom {
+    padding: 1.25rem;
+  }
+
+  .bottom h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bottom p {
+    font-size: 0.9rem;
+  }
+
+  .cta1 {
+    width: 100%; /* Optional: Make button full width on mobile */
+    justify-content: center;
+  }
+
+
+
+  .banner {
+    width: 92%; /* Give it more room on small screens */
+    height: auto; /* Allow height to expand for stacked content */
+    flex-direction: column; /* Stack text and logos vertically */
+    padding: 20px 15px;
+    gap: 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  .left {
+    width: 100%; /* Full width for text */
+    text-align: center; /* Center text for mobile aesthetic */
+    font-size: 1rem;
+    padding: 0 10px;
+    white-space: normal; /* Allow text to wrap if the phone is narrow */
+  }
+
+  /* Hide the divider on mobile as it's a vertical line for horizontal layouts */
+  .divider {
+    display: none; 
+  }
+
+  .right {
+    width: 100%;
+    /* Keep the mask to make logos fade in/out on the edges */
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+  }
+
+  .logoTrack {
+    gap: 35px; /* Slightly tighter gap for mobile screens */
+    animation: moveLogos 15s linear infinite; /* Faster animation for smaller width */
+  }
+
+  .logoTrack img {
+    height: 24px; /* Smaller logos so they fit better on mobile */
+  }
+
+
+
+
+  .sec_3 {
+    margin-top: 3rem;
+    padding: 2rem 0;
+  }
+
+  .container1 {
+    width: 90%; /* Increase width to use phone screen efficiently */
+  }
+
+  .cards2 {
+    /* Collapse the 3-column grid into a single column */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .card1 {
+    text-align: left; /* Center main heading for mobile */
+    align-items: left;
+    margin-bottom: 10px;
+  }
+
+  .card1 h2 {
+    font-size: 2rem; /* Reduce font size for smaller screens */
+    margin-bottom: 0.8rem;
+  }
+
+  .card1 p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card2 {
+    padding: 1.5rem;
+    /* Optional: Center card content for mobile look */
+    text-align: left;
+    align-items: left;
+  }
+
+  .icon {
+    margin-bottom: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    
+  }
+
+  .card2 h4 {
+    font-size: 1.1rem;
+  }
+
+  .card2 p {
+    font-size: 0.9rem;
+  }
+
+  .cta1 {
+    /* Make the button easier to tap on mobile */
+    padding: 14px 28px;
+    width: fit-content;
+  }
+
+
+
+  .sec_5 {
+    padding: 3rem 0;
+    min-height: auto; /* Allow section to height-expand on mobile */
+  }
+
+  .client {
+    width: 90%; /* Increase width for better space usage on small screens */
+    gap: 2rem;
+  }
+
+  .headtitle {
+    flex-direction: column; /* Stack Title and Button */
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .clienttitle {
+    max-width: 100%;
+  }
+
+  .clienttitle h2 {
+    font-size: 1.8rem; /* Smaller heading for mobile */
+    margin-bottom: 0.5rem;
+  }
+
+  .clienttitle p {
+    font-size: 1rem;
+  }
+
+  .clientcard {
+    /* Slightly weaker mask for mobile to keep focus on the main card */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .clicard {
+    /* Show 1 card at a time. Change to 85% if you want to see a 'peek' of the next card */
+    flex: 0 0 100%; 
+    padding: 10px;
+      box-sizing: border-box;
+
+  }
+
+  .img {
+    height: 200px; /* Shorter image height for mobile aspect ratios */
+    border-radius: 1rem;
+  }
+
+  .review {
+    padding: 1.25rem;
+    min-height: 180px; /* Slightly shorter base height */
+    border-radius: 1rem;
+  }
+
+  .clientpara {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Adjust CTA for mobile */
+  .cta1 {
+    width: auto;
+    padding: 12px 24px;
+    box-sizing: border-box;
+
+  }
+
+.section {
+    height: auto !important;
+    min-height:305vh; 
+    position: relative;
+    overflow: visible !important;
+  }
+  .col{
+    height: 79rem;
+    
+  }
+  .col2mobile{
+    position: relative;
+    height: 70em;
+  }
+
+  .stickycontainer {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+    .wrapper {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .sticky {
+    position: relative;
+    height: auto;
+    display: block;
+  }
+
+  /* --- STICKY HEADERS --- */
+  .stickyTitle {
+     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 5px;
+    z-index: 200;
+    height: 3.8rem;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+  }
+
+  /* Independent Progress Bars */
+  .leftTitle::before { background: black; }
+  .rightTitle::before { background: #0a49ff; }
+
+  /* --- CARDS STACKING LOGIC --- */
+  .stackWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem; /* Card to card scroll distance */
+  }
+
+  .stackCard {
+    position: sticky;
+ width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    z-index: 10;
+    margin-top: 0 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Marks Logic: Cards Title-ku keela sequential-a lock aagum (Small Gap) */
+  .stackCard:nth-child(1) { top: 65px; }
+  .stackCard:nth-child(2) { top: 115px; }
+  .stackCard:nth-child(3) { top: 165px; }
+  .stackCard:nth-child(4) { top: 215px; }
+  .stackCard:nth-child(5) { top: 265px; }
+  .stackCard:nth-child(6) { top: 315px; }
+  .stackCard:nth-child(7) { top: 365px; }
+  .stackCard:nth-child(8) { top: 415px; }
+
+  /* --- SECOND SECTION (INDUSTRIES) --- */
+  .col:nth-child(2) {
+    margin-top: 1px; /* First section mudinja appram ithu varum */
+  }
+
+  /* Resetting top for second section cards */
+  .col:nth-child(2) .stackCard:nth-child(1) { top: 65px; }
+  .col:nth-child(2) .stackCard:nth-child(2) { top: 115px; }
+  .col:nth-child(2) .stackCard:nth-child(3) { top: 165px; }
+
+
+}
+
+/* Extra small devices (Phones) */
+@media (max-width: 480px) {
+  .innercontent h2 {
+    font-size: 1.6rem;
+  }
+
+  .top {
+    height: 180px;
+  }
+
+
+
+
+
+  .left {
+    font-size: 0.9rem;
+  }
+
+  .banner {
+    width: 95%;
+    padding: 15px 10px;
+  }
+
+
+  .client {
+    width: 95%;
+  }
+
+  .img {
+    height: 180px;
+  }
+
+  .clienttitle h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .sticky{
+    height: 90vh;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .sticky{
+    height: 92vh;
+  }
+  .stackCard{
+    height: 4rem;
+  }
+}

@@ -1,0 +1,342 @@
+.bgreview {
+  width: 100%;
+  padding: 6rem 0 5rem;
+  background: linear-gradient(
+      rgba(235, 239, 248, 0.95),
+      rgba(235, 239, 248, 0.95)
+    ),
+    url("/MeetingBG.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* HEADINGS */
+.subTitle {
+  color: #2f6bff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0b1b2b;
+  margin-bottom: 60px;
+}
+
+/* SLIDER */
+.sliderWrapper {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* CARD WRAPPER */
+.reviewWrapper {
+  width: 560px;
+  text-align: left;
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 35px;
+  height: 12rem;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+
+  /* Triangle animation control */
+  --triangle-start: 25px;
+  --triangle-move: 25px;
+}
+
+/* TRIANGLE */
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: var(--triangle-start);
+
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-top: 18px solid rgba(255, 255, 255, 0.85);
+
+  animation: triangleMove 8s ease-in-out infinite;
+}
+
+/* TRIANGLE ANIMATION */
+@keyframes triangleMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--triangle-move));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* STARS */
+.stars {
+  color: #2f6bff;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.reviewText {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* USER */
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
+.avatar {
+  width: 4rem;
+  height: 4rem; /* 👈 IMPORTANT: same as width */
+  border-radius: 50%;
+  object-fit: cover; /* 👈 crops image correctly */
+  border-bottom: 4px solid #2f6bff;
+}
+
+.userName {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1b2b;
+}
+
+.userRole {
+  font-size: 14px;
+  color: #7a8a9e;
+}
+
+/* DOTS */
+.dots {
+  margin-top: 45px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #cfd8e3;
+  display: inline-block;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.active {
+  background: #2f6bff;
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+
+  /* ===== SECTION ===== */
+  .bgreview {
+    padding: 4rem 0 3rem;
+  }
+
+  .section {
+    padding: 0 1rem;
+  }
+
+  /* ===== HEADINGS ===== */
+  .subTitle {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 35px;
+    line-height: 1.3;
+  }
+
+  /* ===== SLIDER ===== */
+  .slide {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* ===== CARD WRAPPER ===== */
+  .reviewWrapper {
+    width: 100%;
+  }
+
+  /* ===== CARD ===== */
+  .card {
+    padding: 22px;
+    border-radius: 12px;
+
+    /* Reduce triangle movement for mobile */
+    --triangle-start: 18px;
+    --triangle-move: 12px;
+  }
+
+  .card::after {
+    bottom: -14px;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 14px solid rgba(255, 255, 255, 0.85);
+  }
+
+  /* ===== TEXT ===== */
+  .reviewText {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ===== USER ===== */
+  .userBox {
+    margin-top: 25px;
+    margin-left: 0;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .userName {
+    font-size: 16px;
+  }
+
+  .userRole {
+    font-size: 13px;
+  }
+
+  /* ===== DOTS ===== */
+  .dots {
+    margin-top: 30px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+  }
+}
+
+
+
+/* ===================== TABLET VIEW ===================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  /* ===== SECTION ===== */
+  .bgreview {
+    padding: 5rem 2rem 4rem;
+  }
+
+  .section {
+    padding: 0 2rem;
+  }
+
+  /* ===== HEADINGS ===== */
+  .subTitle {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 45px;
+  }
+
+  /* ===== SLIDER ===== */
+  .slide {
+    gap: 28px;
+  }
+
+  /* ===== CARD WRAPPER ===== */
+  .reviewWrapper {
+    width: 48%;   /* two cards nicely in tablet */
+  }
+
+  /* ===== CARD ===== */
+  .card {
+    padding: 28px;
+    border-radius: 12px;
+
+    --triangle-start: 20px;
+    --triangle-move: 18px;
+  }
+
+  .card::after {
+    bottom: -16px;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 16px solid rgba(255, 255, 255, 0.85);
+  }
+
+  /* ===== TEXT ===== */
+  .reviewText {
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  /* ===== USER ===== */
+  .userBox {
+    margin-top: 28px;
+    margin-left: 10px;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .userName {
+    font-size: 17px;
+  }
+
+  .userRole {
+    font-size: 13.5px;
+  }
+
+  /* ===== DOTS ===== */
+  .dots {
+    margin-top: 35px;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+
+}

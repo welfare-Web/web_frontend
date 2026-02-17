@@ -1,0 +1,1162 @@
+/* carrier.module.css */
+
+/* --- GLOBAL LAYOUT FIXES --- */
+.pageWrapper {
+  overflow-x: hidden; /* Prevents horizontal scroll on mobile */
+  width: 100%;
+}
+
+/* --- HERO SECTION --- */
+.mainhero {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.leftcentexsec2t{
+  color: white;
+}
+
+.hero {
+  margin: 0;
+  padding: 0;
+  background-image: url('/back.png');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 110vh;
+}
+
+.sec1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5%;
+}
+
+.bgimg {
+  position: relative;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+/* Decorative Circle */
+.circleimg {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.cirimg {
+  width: 7rem;
+  height: auto;
+  animation: slide 7.5s infinite ease-in-out;
+}
+
+/* Decorative Triangle */
+.triangleimg {
+  position: absolute;
+  bottom: -3rem;
+  width: 8rem;
+}
+
+.triimg {
+  width: 5rem;
+  height: auto;
+  animation: diagonalMove 7.5s linear infinite;
+}
+
+/* Main Text Content */
+.sec2 {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.rec {
+ position: absolute;
+  top: 2rem;
+  left: 0;
+  margin-left: 1rem;
+  width: 9%;
+  height: 35%;
+  background-color: white;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.content {
+  position: relative;
+  justify-content: baseline;
+
+}
+
+.htext {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0b1c1e;
+}
+
+.typing {
+  color: #3b6cff;
+}
+
+.cursor {
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+}
+
+.ptext {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  color: #333;
+  max-width: 600px;
+}
+
+.buttonexp {
+  margin-top: 2rem;
+}
+
+.btnexp {
+  width: 10rem;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  color: #0b1c1e;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btnexp span {
+  position: relative;
+  z-index: 2;
+}
+
+.btnexp:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #3b6cff;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.btnexp:hover::before {
+  transform: scaleY(1);
+}
+
+/* Side Image (Hero) */
+.sideimg {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  height: 110vh;
+  overflow: hidden;
+}
+
+.sideimg1 {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50% 0 0 50%; /* Large curve */
+  border-bottom: 20px solid blue;
+  animation: expandFade 10s ease-in-out infinite;
+  transform-origin: left;
+}
+
+
+/* --- SECTION 2 CONTAINER --- */
+.section2 {
+  width: 100%;
+  padding: 6rem 0;
+  background-color: #ffffff;
+  overflow: hidden; /* Prevents overflow from animations */
+}
+
+/* The max-width wrapper centers everything */
+.sec2Wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+}
+
+/* --- LEFT SIDE: IMAGES --- */
+.leftSide {
+  flex: 1;
+  position: relative;
+  height: 45rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animShape {
+  position: absolute;
+  animation: compressIn 5s ease-in-out infinite;
+  transform-origin: center;
+  opacity: 0.5;
+}
+
+@keyframes compressIn {
+  0% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scaleX(0.8) scaleY(0.8);
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+
+}
+
+
+.imageGrid {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  z-index: 1;
+}
+
+/* Top Image (People) */
+.imgTop {
+   position: relative;
+  height: 50%;
+  width: 50%;
+}
+
+/* Bottom Image (Man) */
+.imgBottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  z-index: 3;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Blue Badge Overlay */
+.blueBadge {
+  position: absolute;
+  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 75%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bluecircon{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: larger;
+  font-weight:  bold;
+}
+
+
+
+.badgeRing {
+  position: absolute;
+  width: 85%;
+  height: 100%;
+ 
+}
+
+.badgeContent {
+  position: relative;
+  top: -0.5rem;
+
+  z-index: 5;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badgeContent h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+}
+
+.badgeContent p {
+  font-size: 1rem;
+  margin: 5px 0;
+  max-width: 80px;
+  line-height: 1.2;
+}
+
+
+
+/* --- RIGHT SIDE: CONTENT --- */
+.rightSide {
+  flex: 1;
+   width: 50%;
+
+  height: 40rem;
+  position: relative;
+  padding-bottom: 2rem; /* Space for the avatar */
+}
+
+.contentBox {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.subHeading {
+  color: #809fec;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.mainHeading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0b1c1e;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.ptext2_2{
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.ptext2_3{
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Checkboxes */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 3rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.iconBox {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.checkText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+}
+
+/* Hover Effect for Checkbox */
+.checkItem:hover .checkText {
+  color: #3b6cff;
+}
+.checkItem:hover .iconBox {
+  background-color: #eef4ff;
+  transform: scale(1.1);
+}
+.lipa{
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.lipa:hover{
+  text-decoration: underline;
+}
+.lipa1{
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(0, 38, 255);
+}
+/* Button */
+.ctaButton {
+  position: relative;
+  background: #ffffff;
+  color: #0b1c1e;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+
+.ctaButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #3b6cff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.ctaButton:hover::before {
+  transform: scaleX(1);
+}
+
+.ctaButton span {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaButton:hover span {
+  color: #fff;
+}
+
+/* 3D Avatar Character */
+.avatarContainer {
+  display: flex;
+  justify-content: end;
+  top: -13rem;
+  align-items: end;
+  position: relative;
+  margin-top: -1.55rem;
+  /* Allows clicking behind it if needed */
+}
+
+.avatarImg {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+  
+}
+
+
+/* --- ANIMATIONS --- */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+
+
+/* ========================================= */
+/* RESPONSIVE MEDIA QUERIES */
+/* ========================================= */
+
+/* Tablet View (max-width: 1024px) */
+@media (max-width: 1024px){
+  .avatarImg{
+    display: none;
+  }
+  .badgeRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ 
+}
+.line{
+  display: none;
+}
+
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+  .htext{
+    height: 8rem;
+  }
+   .sec2Wrapper {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .sec1{
+    margin: 0;
+  }
+  .section2{
+    margin: 0;
+    padding: 0;
+  }
+
+  .mainHeading {
+    font-size: 2rem;
+  }
+
+  .imageGrid {
+    height: 350px; /* Smaller grid height for mobile */
+  }
+  
+  .blueBadge {
+    width: 250px;
+    height: 250px;
+  }
+  .checkimg{
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .badgeContent h2{
+    font-size: 1.5rem;
+  }
+  .badgeContent p {
+    display: none;
+  }
+
+  .avatarImg {
+    width: 200px;
+  }
+}
+
+
+
+/* --- SECTION 3 (Cards Grid) --- */
+.section3 {
+  background-color: #f4f7fa;
+  padding: 30px 20px 60px 20px;
+  width: 100%;
+}
+
+.htext1 {
+  text-align: center;
+  font-size: 3rem;
+  
+  margin-bottom: 3rem;
+  font-weight: 800;
+  color: #0b1c1e;
+}
+
+.s3Container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.s3CardGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktop: 4 columns */
+  gap: 30px;
+}
+
+.s3ServiceCard {
+  
+
+  position: relative;
+  background: #ffffff;
+  border-radius: 200px;
+  /* Vault/Pill shape */
+  padding: 60px 20px 50px;
+  height: 25rem;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.s3ServiceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.s3ServiceCard:hover .s3WhiteLine {
+  opacity: 2;
+
+}
+
+.s3WhiteLine {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: 10px;
+  height: 250px;
+  background: #ffffff;
+  transform: translateX(-50%) rotate(40deg);
+  /* Angled split */
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.s3TopArc {
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #062c30;
+  /* Default dark color */
+  clip-path: ellipse(80% 100% at 50% 0%);
+  z-index: 4;
+  transition: background 0.5s ease;
+  overflow: hidden;
+  /* Clips the white line */
+}
+
+.s3ServiceCard:hover .s3TopArc {
+  background: #2f6df6;
+  opacity: .5;
+}
+
+.s3HoverBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+.s3HoverBg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 44, 50, 0.9);
+}
+
+.s3ServiceCard:hover .s3HoverBg {
+  opacity: 1;
+}
+
+.s3ImageHolder {
+  position: relative;
+  z-index: 10;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  background: #fff;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.s3ImageHolder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.s3NumberBadge {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2f6df6;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.s3Content {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.s3Title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0b1c1e;
+  transition: color 0.3s;
+}
+
+.s3ServiceCard:hover .s3Title {
+  color: #fff;
+}
+
+.s3ArrowButton {
+  margin: 15px auto 0; /* Ensures consistent gap from text above */
+  width: auto;
+  min-width: 110px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 25px;
+  background: #f1f5ff; /* Matches reference */
+  color: #2f6df6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+
+
+.s3ServiceCard:hover .s3ArrowButton {
+  background: #2f6df6;
+  color: #ffffff;
+}
+/* --- SECTION 4 (Why Choose Us) --- */
+.section4 {
+  width: 100%;
+  padding: 5rem 2rem;
+  background: #fff;
+}
+
+.sec4_1 {
+  max-width: 1200px;
+  align-items: center;
+  
+  margin: 0 auto;
+}
+
+.sec4_1htxt{
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  color: #0b1c1e;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.sec4_1con {
+  display: flex;
+  gap: 30px;
+}
+
+.sec4_1conleft, .sec4_1conright {
+  flex: 1;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.sec4_1conleft:hover, .sec4_1conright:hover {
+  transform: translateY(-5px);
+}
+
+.sec4_1imglef, .sec4_1imgrigh {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.sec4_1conleftcon, .sec4_1conrightcon {
+  padding: 2rem;
+}
+
+.sec4_1conleftconhtxt {
+  font-size: 30px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.sec4_1conleftconhtxt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.1px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg,black);
+  transition: width 0.4s ease;
+}
+
+/* Hover ONLY on heading */
+.sec4_1conleftconhtxt:hover::after {
+  width: 100%;
+}
+
+
+
+.sec4_1conrightconhtxt {
+ font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.sec4_1conrightconhtxt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.1px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg,black);
+  transition: width 0.4s ease;
+}
+
+/* Hover ONLY on heading */
+.sec4_1conrightconhtxt:hover::after {
+  width: 100%;
+}
+
+.sec4_1conrightconlink {
+   margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2f6df6;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 2px;
+}
+.sec4_1conrightconlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .1px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg, #2f6df6, #7b2ff7);
+  transition: width 0.4s ease;
+}
+
+/* Arrow style */
+.arrow {
+  display: inline-block;
+  font-size: 18px;
+  transition: transform 0.35s ease;
+}
+
+/* Hover underline */
+.sec4_1conrightconlink:hover::after {
+  width: 100%;
+}
+
+/* Arrow rotates into up direction */
+.sec4_1conrightconlink:hover .arrow {
+  transform: rotate(-90deg);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes slide {
+
+  0%,
+  100% {
+    transform: translate(10rem, -6rem)
+  }
+
+  50% {
+    transform: translate(100%)
+  }
+}
+
+
+@keyframes diagonalMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(3rem, -3rem);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+@keyframes expandFade {
+  0% {
+    transform: scaleX(3);
+    opacity: 0;
+  }
+
+  5% {
+    transform: scaleX(3);
+    opacity: 0;
+  }
+
+  15% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  91% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(3);
+    opacity: 0;
+  }
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================= */
+/* RESPONSIVE MEDIA QUERIES (Crucial Part)  */
+/* ========================================= */
+
+/* Tablet View (max-width: 1024px) */
+/* Tablet View (max-width: 1024px) */
+@media (max-width: 1024px) {
+  /* Hero Section */
+  .hero {
+    flex-direction: column-reverse; 
+    justify-content: center;
+    padding-top: 2rem;
+    min-height: auto;
+  }
+  
+  .sec1 {
+    width: 100%;
+    padding: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .s3ServiceCard{
+    border-radius: 200px;
+    width: 70%;
+    margin: 0 auto;
+    
+  }
+  .bgimg {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .circleimg, .triangleimg {
+    display: none;
+  }
+
+  .rec {
+    display: none;
+  }
+
+  .content {
+    padding: 0;
+  }
+  
+  .htext {
+    font-size: 3rem;
+  }
+
+  /* Make side image visible but smaller on tablet */
+  .sideimg {
+   display: none;
+  }
+
+  
+
+  /* Section 2 */
+  .bluecircon p {
+   font-size: 15px;
+  }
+
+  .leftSide {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  .rightSide {
+    width: 100%;
+    text-align: center;
+  }
+
+  .checklist {
+    align-items: center; 
+  }
+
+  /* 3D Character center on tablet */
+  .avatarContainer {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  .avatarImg{
+    width: 180px;
+  }
+
+  /* Section 3 Cards */
+  .s3CardGrid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+  
+  /* Section 4 */
+  .sec4_1con {
+    flex-direction: column;
+  }
+}
+
+
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+  .htext {
+    font-size: 2.5rem; /* Smaller font */
+  }
+
+  .ptext {
+    font-size: 1rem;
+  }
+
+  .sideimg {
+    display: none;
+    
+  }
+
+  /* Section 2 Mobile */
+  .sec2_1 {
+    padding: 0 1rem;
+  }
+
+  .htext2_1 {
+    font-size: 1.8rem;
+  }
+
+  /* Adjust image composition for mobile */
+  .leftsecimg2 {
+    width: 40%;
+    bottom: -1rem;
+  }
+  
+  .leftcentersec2 {
+    width: 120px;
+    height: 120px;
+    left: 0;
+    bottom: 0;
+  }
+  
+  
+  .statnumber {
+    font-size: 1.2rem;
+  }
+  
+  .leftcentexsec2t {
+    font-size: 0.7rem;
+  }
+
+  /* Section 3 Cards */
+  .s3CardGrid {
+    grid-template-columns: repeat(1, 1fr); /* 1 Column on Mobile */
+  }
+
+  .s3ServiceCard {
+    border-radius: 200px;
+    height: 450px;
+    width: 300px;
+    margin: 0 auto; /* Slightly less rounded on mobile */
+  }
+  .s4TextFields{
+    margin: auto 0;
+  }
+  .s3Title{
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0b1c1e;
+  transition: color 0.3s;
+}
+  .sec4_1htxt h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

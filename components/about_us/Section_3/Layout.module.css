@@ -1,0 +1,601 @@
+
+
+.solution_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0px;
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  margin-top: -2rem;
+}
+
+.solution_wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-left: -11em;
+}
+
+.content_panel {
+  flex: 1.5;
+  background-color: #061212;
+  border-left: 10px solid;
+  position: relative;
+  margin: 0 0 0 2rem;
+  padding: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.blue_accent {
+  position: absolute;
+  border-right: 10px solid white;
+  border-bottom: 10px solid #ffffff;
+  border-left: 10px solid #1b51c5;
+  transform: skewX(-35deg);
+  margin-right: 100px;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 70px;
+  background-color: #1b51c5;
+}
+
+.icon_box {
+  width: 18rem;
+  height: 8rem;
+  border: 1px dashed #375f97;
+  border-radius: 12px;
+  margin: 1rem 0 0 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.entirebox {
+  margin-left: 5rem;
+}
+.boxcont {
+  display: flex;
+  gap: 2rem;
+  margin-left: -6rem;
+}
+/* .Conttxt{
+  margin-left: -6rem;
+} */
+.title {
+  display: flex;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.DescriptSec {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.description p{
+  color: white;
+  font-size: 16px;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.bulletList {
+  padding-left: 1.5rem;
+  list-style: disc;
+  color: white;
+}
+
+.bulletList li {
+  margin-bottom: 0.6rem;
+  font-size: 15px;
+}
+
+/* Avatar Group */
+.action_row {
+  margin: 1.5rem 0 0 13rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  /* 🔥 REQUIRED for smooth animation */
+  transition: transform 0.3s ease;
+  animation: shade 2s ease-in infinite;
+}
+@keyframes shade {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(4px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+/* 👉 MOVE ENTIRE ROW ON HOVER */
+/* .action_row:hover {
+  transform: translateX(7px);
+} */
+
+/* AVATAR GROUP */
+.avatar_group {
+  display: flex;
+}
+
+/* INDIVIDUAL AVATAR */
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-image: url("/Review0011.png");
+  background-size: cover;
+  border: 2px solid #000000;
+  margin-right: -10px;
+}
+.avatar1 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  /* background-color: #475569; */
+  background-image: url("/Review006.png");
+  background-size: cover;
+  border: 2px solid #061212;
+  margin-right: -10px;
+}
+.avatar2 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-image: url("/Review066.png");
+  background-size: cover;
+  border: 2px solid #061212;
+  margin-right: -10px;
+}
+
+/* BUTTON */
+.more_btn {
+  background: none;
+  border: none;
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ARROW */
+.btnArrow {
+  display: inline-flex;
+}
+.footer_text {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0 0 0 13rem;
+}
+
+.footer_text span {
+  color: #3b82f6;
+  cursor: pointer;
+}
+/* --- Center Image (The Key Fix) --- */
+.image_panel {
+  margin-top: -2.5rem;
+  flex: 0 0 450px; /* FIXED width to match screenshot ratio */
+  height: 480px; /* TALLER than side panels */
+  background-color: #ffffff; /* Creates the white gaps on left/right */
+  padding: 0 20px; /* EXACT white-space gap width */
+  position: relative;
+  z-index: 10;
+}
+
+.image_frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* --- Right Side --- */
+
+.curve_panel {
+  flex: 1;
+  height: 100%;
+  background-color: #061212;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+  border-right: 15px solid #3f6cff;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .solution_container {
+    padding: 70px 16px;
+    margin-top: 0;
+  }
+
+  .solution_wrapper {
+    flex-direction: column;
+    height: auto;
+    margin-left: 0;
+    gap: 2rem;
+  }
+
+  /* MAIN CARD */
+  .content_panel {
+    padding: 40px 24px;
+    margin: 0;
+    border-radius: 22px;
+    border-left: none;
+  }
+
+  .blue_accent {
+    display: none;
+  }
+
+  /* REMOVE ALL PUSHES */
+  .entirebox,
+  .boxcont,
+  .icon_box,
+  .action_row,
+  .footer_text {
+    margin: 0;
+  }
+
+  .boxcont {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .icon_box {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* TEXT */
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .bulletList li {
+    font-size: 14px;
+  }
+
+  /* AVATAR + BUTTON ROW */
+  .action_row {
+    margin-top: 1.5rem;
+    justify-content: space-between;
+  }
+
+  /* HIDE DESKTOP VISUAL PANELS */
+  .image_panel,
+  .curve_panel {
+    display: none;
+  }
+  .more_btn{
+    position: relative;
+    margin-right: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .solution_wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+  .image_panel {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 350px;
+    padding: 20px 0;
+  }
+  .content_panel,
+  .curve_panel {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+
+
+/* ================================
+   MOBILE & SMALL TABLET (<= 1024px)
+================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .solution_container {
+    padding: 80px 0;
+    /* margin-top: -145rem; */
+  }
+
+  .solution_wrapper {
+    flex-direction: column;
+    height: auto;
+    margin-left: 0;
+    gap: 2rem;
+  }
+
+  /* LEFT CONTENT */
+  .content_panel {
+    margin: 0;
+    padding: 50px 32px;
+    border-left: none;
+    border-radius: 24px;
+  }
+
+  .blue_accent {
+    display: none;
+  }
+
+  .boxcont {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 1.5rem;
+  }
+
+  .icon_box {
+    margin: 0;
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .entirebox {
+    margin-left: 0;
+  }
+
+  .description {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* IMAGE PANEL */
+   .image_panel,
+  .image_frame {
+    display: none;
+    
+  }
+ 
+  /* RIGHT CURVE */
+  .curve_panel {
+    /* height: 220px;
+    border-radius: 40px;
+    border-right: none;
+    border-top: 12px solid #3f6cff; */
+    display: none;
+  }
+
+  /* AVATARS & BUTTON */
+  .action_row {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .footer_text {
+    margin-left: 0;
+  }
+}
+
+/* ================================
+   SMALL MOBILE (<= 480px)
+================================ */
+@media (max-width: 480px) {
+  .solution_container {
+    padding: 60px 0;
+  }
+
+  .content_panel {
+    padding: 36px 24px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .icon_box {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .avatar,
+  .avatar1,
+  .avatar2 {
+    width: 34px;
+    height: 34px;
+  }
+
+  .more_btn {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .solution_container {
+    padding: 80px 0;
+    /* margin-top: -145rem; */
+  }
+
+  .solution_wrapper {
+    flex-direction: column;
+    height: auto;
+    margin-left: 0;
+    gap: 2rem;
+  }
+
+  /* LEFT CONTENT */
+  .content_panel {
+    margin: 0 auto;
+    padding: 50px 32px;
+    border-left: none;
+    border-radius: 24px;
+    width: 85%;
+  }
+
+  .blue_accent {
+    display: none;
+  }
+
+  .boxcont {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 1.5rem;
+  }
+  .description p {
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .icon_box {
+    margin: 0;
+    position: relative;
+    top: 1rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .entirebox {
+    margin-left: 0;
+  }
+
+  .description {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* IMAGE PANEL */
+   .image_panel,
+  .image_frame {
+    display: none;
+    
+  }
+ 
+  /* RIGHT CURVE */
+  .curve_panel {
+    /* height: 220px;
+    border-radius: 40px;
+    border-right: none;
+    border-top: 12px solid #3f6cff; */
+    display: none;
+  }
+
+  /* AVATARS & BUTTON */
+  .action_row {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .footer_text {
+    margin-left: 0;
+  }
+}
+
+/* =========================================
+   LARGE LAPTOP RANGE — 1440px to 1536px
+   (Same layout behavior, only breakpoint)
+   ========================================= */
+
+@media (min-width: 1440px) and (max-width: 1536px) {
+
+  .solution_container {
+    padding: 80px 0;
+    /* margin-top: -145rem; */
+  }
+
+  .solution_wrapper {
+    flex-direction: column;
+    height: auto;
+    margin-left: 0;
+    gap: 2rem;
+  }
+
+  /* LEFT CONTENT */
+  .content_panel {
+    margin: 0 auto;
+    padding: 50px 32px;
+    border-left: none;
+    border-radius: 24px;
+    width: 85%;
+  }
+
+  .blue_accent {
+    display: none;
+  }
+
+  .boxcont {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 1.5rem;
+  }
+
+  .icon_box {
+    margin: 0;
+    position: relative;
+    top: -2=1rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .entirebox {
+    margin-left: 0;
+  }
+
+  .description {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* IMAGE PANEL */
+  .image_panel,
+  .image_frame {
+    display: none;
+  }
+
+  /* RIGHT CURVE */
+  .curve_panel {
+    display: none;
+  }
+
+  /* AVATARS & BUTTON */
+  .action_row {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .footer_text {
+    margin-left: 0;
+  }
+
+}
+
+

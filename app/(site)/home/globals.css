@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body{
+
+  margin: 0;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+
+
+
+
