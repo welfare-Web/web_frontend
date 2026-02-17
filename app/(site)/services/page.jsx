@@ -277,7 +277,7 @@ export default function Services() {
                 <div className={style.sec6_2}>
                     <div className={style.sec6_2_1}>
                     <Image src="/business-team-meeting.jpg" className={style.sec6sec2img1} loading="lazy" alt='arrow' width={1500} height={1500} />
-                    <Image src="/circle1.png" className={style.sec6sec2img2} loading="lazy" alt='arrow' width={1500} height={1500} />
+                    <Image src="/Circle1.png" className={style.sec6sec2img2} loading="lazy" alt='arrow' width={1500} height={1500} />
                     </div>
                     <div className={style.sec6_2_2}>
                         <h1 className={style.sec6_2txt1}><span className={style.sec6_2spantxt1}>Strategically:</span>  deliver customer-focused digital solutions that emphasize quality, performance, and long-term business value through modern technology.</h1>
@@ -287,4 +287,5 @@ export default function Services() {
       </div>
     </>
   );
+
 }
