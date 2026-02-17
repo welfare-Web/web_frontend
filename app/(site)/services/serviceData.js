@@ -18,7 +18,7 @@ export const SERVICES = [
     slug: "python-development",
     desc: "We develop efficient and scalable Python applications for automation, backend systems, and data-driven solutions.",
     img: "/Python.jpg",
-    icon: "/Python.png",
+    icon: "/python.png",
     index: "02",
   },
   {
@@ -1049,3 +1049,4 @@ export const SERVICE_PAGES = {
     ],
   },
 };
+
