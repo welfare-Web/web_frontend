@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className={style.cmpimg1}>
             <a href="/">
               <Image
-                src="/logo.png"
+                src="/Logo.png"
                 alt="Logo"
                 className={style.logo}
                 width={150}
@@ -86,4 +86,5 @@ export default function Navbar() {
       </div>
     </div>
   );
+
 }
