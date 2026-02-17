@@ -10,9 +10,7 @@ body {
   font-family: var(--font-inter);
   overflow-x: hidden;
 }
-body::-webkit-scrollbar {
-   display: none; /* Hide scrollbar */
-}
+
 p{
   color: #191e25;;
 }
