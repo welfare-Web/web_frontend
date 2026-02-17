@@ -13,7 +13,7 @@ export default function footnote(){
                     <div className={style.cont1}>
                         <div className={style.cont1_1}>
                             <div className={style.logo1}>
-                                <Image src="/logo.png" className={style.logo} alt='logo' width={1500} height={1500} />
+                                <Image src="/Logo.png" className={style.logo} alt='logo' width={1500} height={1500} />
                             </div>
                             <div className={style.name}>
                                 <h1 data-no-animate className={style.nametxt}>WELFARE<br/>HEALTHTECH</h1>
@@ -68,4 +68,5 @@ export default function footnote(){
         </div>
         </>
     )
+
 }
